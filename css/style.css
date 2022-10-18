@@ -1,0 +1,307 @@
+
+
+
+:root {
+    --main-bg-color: rgb(216, 204, 204);
+    --main-text-color: #888888;
+    --bg-first-color: #8d887e;
+    --bg-secon-color: #F2F2F2;
+    --contra-color: #222225;
+}
+
+
+[data-theme="dark"] {
+    --main-bg-color: #424666;
+    --main-text-color: #ccc;
+    --bg-first-color: #201a5c;
+    --bg-secon-color: #393980;
+    --contra-color: #C4C1BB;
+}
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+screen {
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+}
+
+.switch-cont {
+    margin: 2em auto;
+    /* position: absolute; */
+    bottom: 0;
+    z-index: 1001;
+    position: absolute;
+    left: 95vw;
+    top: 0vw;
+}
+
+.switch-cont .switch-btn {
+    font-family: monospace;
+    text-transform: uppercase;
+    outline: none;
+    padding: 0.5rem 1rem;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border: 1px solid var(--main-text-color);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+}
+
+
+
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: -5px;
+    margin: auto;
+    z-index: 1;
+}
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    transition: ease 1s;
+    background-image: linear-gradient(to top, var(--bg-first-color) 20%, var(--bg-secon-color) 80%);
+}
+
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+
+.bgBottom {
+    z-index: 5;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.waveTop {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.waveMiddle {
+    background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+
+
+.sidebarMenu {
+    position: fixed;
+    display: flex;
+    width: 5.3vw;
+    height: 45vh;
+    z-index: 1001;
+    top: 13vw;
+    left: 0vw;
+    border-radius: 0vw 1.5vw 1.5vw 0vw;
+    display: flex;
+    background-color: var(--contra-color);
+    z-index: 1001;
+    opacity: .7;
+}
+
+.sidebarMenu .arrow {
+    background-image: url(../img/sidebar-menu/arrow.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 1.3vw;
+    height: 5vh;
+    position: relative;
+    margin: auto;
+    z-index: 1002;
+    cursor: pointer;
+}
+
+.sidebarMenu .arrow:hover {
+    border: #3D2C4A;
+}
+
+.sidebarMenu .cont-icons-menu {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 95%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.sidebarMenu .cont-icons-menu .icon {
+    display: flex;
+    width: 100%;
+    height: 3.5vw;
+    align-items: center;
+    cursor: pointer;
+    transition: ease .5s;
+}
+
+.sidebarMenu .cont-icons-menu .icon.select-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.sidebarMenu .cont-icons-menu .icon img {
+    margin: auto;
+    width: 60%;
+
+}
+
+
+
+
+@media screen and (max-width:1024px) {
+
+    .sidebarMenu {       
+        display: none;       
+    }
+
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+
+
+    .sidebarMenu {       
+        display: none;       
+    }
+
+}
+
+
+
+
+@media screen and (max-width:480px) {
+
+    .sidebarMenu {       
+        display: none;       
+    }
+
+    .wave {
+        position: absolute;
+        left: 0;
+        width: 500%;
+        height: 100%;
+        background-repeat: repeat no-repeat;
+        background-position: 0 bottom;
+        transform-origin: center bottom;
+        top: 7vw;
+    }
+
+    .event-detail {
+        font-size: 16px;
+        margin: 2em .5em .5em;
+        padding: 1em;
+    }
+
+    .contact {
+        display: block;
+        height: auto;
+        padding: 1em 0em;
+        text-align: center;
+    }
+
+    .form-email button {
+        margin: 1em auto;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+        z-index: 2;
+    }
+
+
+}
+
+
+
+@media screen and (max-width:320px) {
+
+    .wave {
+        position: absolute;
+        left: 0;
+        width: 500%;
+        height: 100%;
+        background-repeat: repeat no-repeat;
+        background-position: 0 bottom;
+        transform-origin: center bottom;
+        top: 7vw;
+    }
+
+
+
+    .sidebarMenu {       
+        display: none;       
+    }
+
+
+}
