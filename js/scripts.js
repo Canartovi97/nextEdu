@@ -31,6 +31,15 @@ if (currentTheme) {
 function aoutsidebarMenu() {
 	$(".arrow").css("display", "none")
 	$(".sidebarMenu").animate({ width: '5.3vw' }, 400)
+	$(".icon").css("display", "flex")
+	$(".close-menu").css("display", "flex")
+}
+
+function closeSidebarMenu() {
+	$(".arrow").css("display", "flex")
+	$(".sidebarMenu").animate({ width: '2.3vw' }, 400)
+	$(".icon").css("display", "none")
+	$(".close-menu").css("display", "none")
 }
 
 function screen_change(id) {
