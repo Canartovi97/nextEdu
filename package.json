@@ -1,0 +1,27 @@
+{
+  "name": "nextedu",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Canartovi97/nextEdu.git"
+  },
+  "keywords": [
+    "next",
+    "edu"
+  ],
+  "author": "Camilo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Canartovi97/nextEdu/issues"
+  },
+  "homepage": "https://github.com/Canartovi97/nextEdu#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "http": "^0.0.1-security"
+  }
+}

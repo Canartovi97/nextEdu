@@ -3,6 +3,11 @@
     src: url("../fonts/SuezOne-Regular.ttf");
 }
 
+@font-face {
+    font-family: poppins;
+    src: url("../modules_2/fonts/Poppins-Medium.ttf");
+}
+
 
 
 :root {
